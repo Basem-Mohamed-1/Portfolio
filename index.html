@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basem Mohamed — Media Buyer &amp; Performance Marketer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F1F3EF;
+    --bg-alt:#E7EAE3;
+    --panel:#FBFCFA;
+    --ink:#14181C;
+    --ink-soft:#5A625C;
+    --ink-faint:#8B948C;
+    --line:#D4D9D0;
+    --green:#0F7A52;
+    --green-soft:#E4F0E9;
+    --amber:#B9781F;
+    --amber-soft:#F3E9D8;
+    --radius:2px;
+    --display:'Space Grotesk',sans-serif;
+    --body:'Inter',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--green);color:#fff;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  /* ---- top bar ---- */
+  header.topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(241,243,239,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1080px;margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;
+  }
+  .brand{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand b{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:0;}
+  nav.links{display:flex;gap:22px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;}
+  nav.links a{text-decoration:none;color:var(--ink-soft);transition:color .15s;}
+  nav.links a:hover{color:var(--ink);}
+  .status-pill{
+    display:flex;align-items:center;gap:7px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;
+    color:var(--green);border:1px solid var(--green);
+    padding:5px 10px;border-radius:20px;background:var(--green-soft);
+    white-space:nowrap;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);position:relative;flex:none;}
+  .dot::after{
+    content:"";position:absolute;inset:-4px;border-radius:50%;
+    border:1px solid var(--green);opacity:.6;
+    animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(.6);opacity:.7;}
+    100%{transform:scale(1.8);opacity:0;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .dot::after{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---- hero: styled as an ads-manager table row ---- */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);}
+  .table-head{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.3fr 1fr;
+    gap:14px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+    color:var(--ink-faint);text-transform:uppercase;
+    padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .table-row{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.3fr 1fr;
+    gap:14px;align-items:center;
+    padding:18px 0;border-bottom:1px solid var(--line);
+  }
+  .cell-name{font-family:var(--display);font-weight:600;font-size:20px;}
+  .cell-name span{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:var(--ink-soft);margin-top:3px;}
+  .cell{font-family:var(--mono);font-size:14.5px;}
+  .cell small{display:block;font-family:var(--body);font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;margin-top:3px;}
+  .cell.up{color:var(--green);}
+
+  .hero h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(32px,5vw,54px);
+    line-height:1.08;letter-spacing:-.01em;
+    margin:40px 0 22px;max-width:820px;
+  }
+  .hero h1 em{font-style:normal;color:var(--green);}
+  .hero p.lede{
+    max-width:620px;color:var(--ink-soft);font-size:16.5px;line-height:1.65;
+  }
+  .hero-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;
+    padding:11px 18px;border-radius:2px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--ink);color:var(--bg);}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);}
+
+  /* ---- section shell ---- */
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    color:var(--ink-faint);text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+  h2.section-title{
+    font-family:var(--display);font-weight:600;font-size:28px;margin-bottom:14px;
+  }
+  .section-sub{color:var(--ink-soft);max-width:620px;font-size:15px;margin-bottom:28px;}
+
+  /* ---- about ---- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;}
+  .about-grid p{color:var(--ink-soft);font-size:15.5px;line-height:1.75;margin-bottom:16px;}
+  .about-grid p strong{color:var(--ink);font-weight:600;}
+  .fact-list{border-top:1px solid var(--line);}
+  .fact{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .fact dt{color:var(--ink-faint);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+  .fact dd{font-weight:500;text-align:right;}
+
+  /* ---- experience ---- */
+  .exp-row{
+    padding:22px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:1.5fr 2.5fr;gap:24px;
+  }
+  .exp-row:last-child{border-bottom:none;}
+  .exp-role{font-family:var(--display);font-weight:600;font-size:17px;}
+  .exp-org{color:var(--ink-soft);font-size:13.5px;margin-top:2px;}
+  .exp-tag{
+    display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;
+    color:var(--amber);background:var(--amber-soft);padding:3px 8px;border-radius:2px;
+  }
+  .exp-list{list-style:none;}
+  .exp-list li{
+    position:relative;padding-left:16px;margin-bottom:9px;color:var(--ink-soft);font-size:14.5px;line-height:1.6;
+  }
+  .exp-list li::before{content:"—";position:absolute;left:0;color:var(--ink-faint);}
+  .exp-list b{color:var(--ink);font-weight:600;}
+
+  /* ---- case studies: accordion rows ---- */
+  .case{
+    border:1px solid var(--line);border-radius:2px;margin-bottom:14px;background:var(--panel);overflow:hidden;
+  }
+  .case summary{
+    list-style:none;cursor:pointer;padding:20px 22px;
+    display:grid;grid-template-columns:2fr repeat(3,1fr) 20px;gap:14px;align-items:center;
+  }
+  .case summary::-webkit-details-marker{display:none;}
+  .case-name{font-family:var(--display);font-weight:600;font-size:16.5px;}
+  .case-tag{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;margin-top:4px;}
+  .case-metric{font-family:var(--mono);font-size:14px;}
+  .case-metric small{display:block;font-family:var(--body);font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
+  .chevron{
+    width:20px;height:20px;border:1px solid var(--line);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;
+    transition:transform .2s ease;color:var(--ink-soft);
+  }
+  .case[open] .chevron{transform:rotate(45deg);}
+  .case-body{padding:0 22px 24px;border-top:1px solid var(--line);}
+  .case-body p{color:var(--ink-soft);font-size:14.5px;line-height:1.7;margin:18px 0 14px;max-width:680px;}
+  .case-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:10px;}
+  .case-stats div{font-family:var(--mono);}
+  .case-stats span{display:block;font-size:19px;font-weight:500;color:var(--green);}
+  .case-stats small{display:block;font-family:var(--body);font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em;margin-top:3px;}
+  .case-note{
+    margin-top:16px;font-size:12px;color:var(--ink-faint);font-style:italic;
+  }
+  .case-shot{
+    margin:6px 0 20px;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--bg-alt);
+  }
+  .case-shot img{display:block;width:100%;height:auto;}
+  .case-shot figcaption{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--ink-faint);
+    text-transform:uppercase;padding:9px 12px;border-top:1px solid var(--line);
+  }
+
+  /* ---- skills ---- */
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .skill-group h3{
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-size:13px;padding:6px 11px;border:1px solid var(--line);border-radius:20px;
+    color:var(--ink-soft);background:var(--panel);
+  }
+
+  /* ---- education / achievement ---- */
+  .edu-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-name{font-family:var(--display);font-weight:600;font-size:16px;}
+  .edu-meta{color:var(--ink-soft);font-size:13.5px;}
+  .edu-year{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    font-family:var(--mono);font-size:12.5px;color:var(--amber);
+    background:var(--amber-soft);padding:8px 12px;border-radius:2px;
+  }
+
+  /* ---- contact / footer ---- */
+  footer{padding:60px 0 40px;}
+  .contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;}
+  footer h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.1;margin-bottom:18px;}
+  .contact-list{list-style:none;}
+  .contact-list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px;}
+  .contact-list li a{text-decoration:none;font-family:var(--mono);}
+  .contact-list li span:first-child{color:var(--ink-faint);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+  .foot-note{margin-top:36px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
+
+  /* ---- responsive ---- */
+  @media (max-width:760px){
+    .table-head{display:none;}
+    .table-row{grid-template-columns:1fr 1fr;row-gap:14px;}
+    .cell-name{grid-column:1/-1;}
+    .about-grid{grid-template-columns:1fr;gap:28px;}
+    .exp-row{grid-template-columns:1fr;gap:10px;}
+    .case summary{grid-template-columns:1fr;row-gap:10px;}
+    .chevron{justify-self:end;}
+    .skill-groups{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    nav.links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><b>Basem Mohamed</b> · Media Buyer</div>
+    <nav class="links">
+      <a href="#experience">Experience</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="status-pill"><span class="dot"></span>Available for work</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:none;">
+    <div class="table-head">
+      <div>Campaign</div><div>Delivery</div><div>Experience</div><div>Ad Spend Managed</div><div>Total Avg. ROAS</div>
+    </div>
+    <div class="table-row">
+      <div class="cell-name">Basem Mohamed<span>Performance Marketer / Media Buyer</span></div>
+      <div class="cell up">● Active</div>
+      <div class="cell">1 yr<small>Hands-on</small></div>
+      <div class="cell">60K+ EGP<small>Internship + freelance</small></div>
+      <div class="cell up">8.45x<small>Across all campaigns</small></div>
+    </div>
+
+    <h1>I turn ad spend into <em>qualified leads</em> and sales.</h1>
+    <p class="lede">A performance marketer / media buyer with hands-on experience managing Meta advertising campaigns across e-commerce, fashion, education, B2B, and local businesses — combined with a growing understanding of broader marketing strategy, business economics, analytics, and customer acquisition. Backed by a Computer Science background, which keeps every decision data-first.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#cases">View case studies →</a>
+      <a class="btn btn-ghost" href="mailto:basem.m.abdelsaboor@gmail.com">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="eyebrow">01 — Summary</div>
+    <div class="about-grid">
+      <div>
+        <p>I manage <strong>Meta, TikTok, and Google Ads</strong> campaigns end-to-end — strategy, budget allocation, creative testing, audience targeting, and performance reporting — with the goal of improving ROI, not just impressions.</p>
+        <p>My background is <strong>Computer Science</strong> at Cairo University, which shapes how I approach media buying: as a data problem first. I look for patterns in cost-per-result, structure campaigns to isolate variables, and report performance the way I'd document any analysis — clearly, and backed by numbers.</p>
+        <p>I've run campaigns across very different account types — a high-spend e-commerce brand, multi-branch academy launches, fashion, and B2B — which means I've had to adapt targeting and creative strategy to very different buyer journeys, not apply one playbook everywhere.</p>
+      </div>
+      <dl class="fact-list">
+        <div class="fact"><dt>Location</dt><dd>New Cairo, Egypt</dd></div>
+        <div class="fact"><dt>Platforms</dt><dd>Meta · TikTok · Google</dd></div>
+        <div class="fact"><dt>Education</dt><dd>B.Sc. Computer Science</dd></div>
+        <div class="fact"><dt>Languages</dt><dd>Arabic · English</dd></div>
+        <div class="fact"><dt>Industries</dt><dd>E-com · Fashion · Education · B2B</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="eyebrow">02 — Experience</div>
+    <h2 class="section-title">Where I've worked</h2>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-role">Media Buyer Intern</div>
+        <div class="exp-org">De Backers (EST. 1986)</div>
+        <span class="exp-tag">4.14x ROAS</span>
+      </div>
+      <ul class="exp-list">
+        <li>Managed and optimized Meta Ads campaigns for a high-budget e-commerce account, with <b>monthly ad spend exceeding 660,000 EGP</b>, focused on sales growth and campaign efficiency.</li>
+        <li>Achieved an <b>average 4.14 ROAS</b> across managed campaigns by optimizing audience targeting, creative, and campaign structure.</li>
+        <li>Analyzed campaign performance, built reports, and implemented data-driven optimizations to improve key metrics.</li>
+      </ul>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-role">Freelance Media Buyer</div>
+        <div class="exp-org">Independent clients</div>
+        <span class="exp-tag">26K+ EGP managed</span>
+      </div>
+      <ul class="exp-list">
+        <li>Planned, launched, and optimized Meta Ads campaigns for clients across <b>fashion, B2B industrial services, and education</b>, aligning each strategy with the client's actual business goal.</li>
+        <li>Managed marketing campaigns for <b>4 independent academy branches</b>, tailoring targeting and creative to each branch's local audience.</li>
+        <li>Maintained long-term partnerships with most clients while managing cumulative ad spend of 26,000+ EGP.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="cases">
+    <div class="eyebrow">03 — Case Studies</div>
+    <h2 class="section-title">Campaigns, from the account itself</h2>
+    <p class="section-sub">Pulled directly from Ads Manager — real delivery data from accounts I've managed. Click a row to expand.</p>
+
+    <details class="case" open>
+      <summary>
+        <div><div class="case-name">Multi-Branch Academy Launches</div><div class="case-tag">Education · Lead Gen</div></div>
+        <div class="case-metric">1.48–3.07 EGP<small>Cost / result</small></div>
+        <div class="case-metric">600+<small>Messaging leads</small></div>
+        <div class="case-metric">28K+<small>Reach, top campaign</small></div>
+        <div class="chevron">+</div>
+      </summary>
+      <div class="case-body">
+        <p>Ran Meta lead-gen campaigns for a chain of academy branches (matches the 4-branch academy work on my CV), each launch needing its own local targeting rather than one shared campaign. Objective was Messenger conversations — the client's actual sales pipeline starts with a chat, not a form.</p>
+        <figure class="case-shot">
+          <img src="images/academy-account.png" alt="Live campaign delivery — academy launch account, Ads Manager" loading="lazy">
+          <figcaption>Live campaign delivery — academy launch account, Ads Manager</figcaption>
+        </figure>
+        <div class="case-stats">
+          <div><span>600</span><small>Results — best campaign</small></div>
+          <div><span>1.48 EGP</span><small>Cost per result — best campaign</small></div>
+          <div><span>418</span><small>Results — Gardenia branch launch</small></div>
+          <div><span>2.08 EGP</span><small>Cost per result — Gardenia branch</small></div>
+        </div>
+        <p class="case-note">Figures from live Ads Manager account, lifetime/campaign totals.</p>
+      </div>
+    </details>
+
+    <details class="case">
+      <summary>
+        <div><div class="case-name">Fashion E-commerce — Sales &amp; Engagement</div><div class="case-tag">Fashion · Retail</div></div>
+        <div class="case-metric">2.58 EGP<small>Best cost / result</small></div>
+        <div class="case-metric">250<small>Conversations, top ad set</small></div>
+        <div class="case-metric">6 active<small>Campaigns, 30 days</small></div>
+        <div class="chevron">+</div>
+      </summary>
+      <div class="case-body">
+        <p>Managed a fashion e-commerce account running parallel sales and engagement campaigns. Split budget across a core "Sale" campaign and product-led ad sets (e.g. a best-selling dress), then reallocated spend toward the ad sets converting messaging conversations most efficiently.</p>
+        <figure class="case-shot">
+          <img src="images/fashion-account.png" alt="Live campaign delivery — fashion e-commerce account, Ads Manager" loading="lazy">
+          <figcaption>Live campaign delivery — fashion e-commerce account, Ads Manager</figcaption>
+        </figure>
+        <div class="case-stats">
+          <div><span>250</span><small>Results — best-performing ad set</small></div>
+          <div><span>2.58 EGP</span><small>Cost per result — best ad set</small></div>
+          <div><span>74</span><small>Results — product-specific ad set</small></div>
+          <div><span>61K</span><small>Reach — best-performing ad set</small></div>
+        </div>
+        <p class="case-note">Last-30-day snapshot from the live account.</p>
+      </div>
+    </details>
+
+    <details class="case">
+      <summary>
+        <div><div class="case-name">B2B Industrial / Mechanical Startup</div><div class="case-tag">B2B · Lead Gen</div></div>
+        <div class="case-metric">26.5–33.7 EGP<small>Cost / result</small></div>
+        <div class="case-metric">130+<small>Qualified conversations</small></div>
+        <div class="case-metric">12K+<small>Reach, top campaign</small></div>
+        <div class="chevron">+</div>
+      </summary>
+      <div class="case-body">
+        <p>B2B lead generation for a mechanical/industrial startup — a colder, narrower audience than consumer accounts, which shows up directly in cost per result. Focus was on messaging-conversation volume as a proxy for sales-qualified interest, since B2B decision-makers rarely convert on the first touch.</p>
+        <figure class="case-shot">
+          <img src="images/b2b-account.png" alt="Live campaign delivery — B2B/mechanical startup account, Ads Manager" loading="lazy">
+          <figcaption>Live campaign delivery — B2B/mechanical startup account, Ads Manager</figcaption>
+        </figure>
+        <div class="case-stats">
+          <div><span>71</span><small>Results — top campaign</small></div>
+          <div><span>26.53 EGP</span><small>Cost per result — best campaign</small></div>
+          <div><span>12,187</span><small>Reach — best campaign</small></div>
+          <div><span>3</span><small>Campaigns tested in parallel</small></div>
+        </div>
+        <p class="case-note">Figures from live Ads Manager account, lifetime totals.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="eyebrow">04 — Skills</div>
+    <h2 class="section-title">Toolkit</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Advertising Platforms</h3>
+        <div class="chip-row">
+          <span class="chip">Meta Ads (Facebook &amp; Instagram)</span>
+          <span class="chip">TikTok Ads</span>
+          <span class="chip">Google Ads</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Marketing &amp; Analysis</h3>
+        <div class="chip-row">
+          <span class="chip">Market Research</span>
+          <span class="chip">Branding</span>
+          <span class="chip">Market Segmentation</span>
+          <span class="chip">Competitor Analysis</span>
+          <span class="chip">Product Thinking</span>
+          <span class="chip">Requirement Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Working Style</h3>
+        <div class="chip-row">
+          <span class="chip">Communication</span>
+          <span class="chip">Teamwork</span>
+          <span class="chip">Problem-solving</span>
+          <span class="chip">Critical thinking</span>
+          <span class="chip">Fast learner</span>
+          <span class="chip">Negotiation basics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" style="border-bottom:none;">
+    <div class="eyebrow">05 — Education &amp; Recognition</div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-name">B.Sc. Computer Science</div>
+        <div class="edu-meta">Faculty of Computers &amp; AI, Cairo University — Giza, Egypt · GPA 3.1</div>
+      </div>
+      <div class="edu-year">2024 – 2028 (Expected)</div>
+    </div>
+    <span class="badge">🏆 4th place — FINYOLOGY Competition, college level (organized by the CBE)</span>
+  </section>
+
+</div>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h2>Let's talk about your next campaign.</h2>
+        <p class="section-sub" style="margin-bottom:0;">Open to media buying roles, freelance projects, and campaign audits.</p>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:basem.m.abdelsaboor@gmail.com">basem.m.abdelsaboor@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+201151930659">+20 01151930659</a></li>
+        <li><span>Location</span><span>New Cairo, Egypt</span></li>
+        <li><span>LinkedIn</span><a href="#">Add your profile URL</a></li>
+      </ul>
+    </div>
+    <div class="foot-note">© 2026 Basem Mohamed — Built as a live portfolio, updated as campaigns close.</div>
+  </div>
+</footer>
+
+</body>
+</html>
