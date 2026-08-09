@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Basem Mohamed — Media Buyer &amp; Performance Marketer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#F1F3EF;
@@ -21,9 +18,9 @@
     --amber:#B9781F;
     --amber-soft:#F3E9D8;
     --radius:2px;
-    --display:'Space Grotesk',sans-serif;
-    --body:'Inter',sans-serif;
-    --mono:'IBM Plex Mono',monospace;
+    --display:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --body:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    --mono:ui-monospace,'SFMono-Regular','Cascadia Code','Consolas','Menlo',monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -114,6 +111,14 @@
     max-width:620px;color:var(--ink-soft);font-size:16.5px;line-height:1.65;
   }
   .hero-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+  .hero-flex{display:flex;gap:44px;justify-content:space-between;align-items:flex-start;margin-top:40px;}
+  .hero-main{flex:1;min-width:0;}
+  .hero-main h1{margin-top:0;}
+  .hero-photo{
+    flex:none;width:190px;aspect-ratio:4/5;
+    border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--bg-alt);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
   .btn{
     font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;
     padding:11px 18px;border-radius:2px;text-decoration:none;
@@ -139,6 +144,13 @@
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;}
   .about-grid p{color:var(--ink-soft);font-size:15.5px;line-height:1.75;margin-bottom:16px;}
   .about-grid p strong{color:var(--ink);font-weight:600;}
+  .profile-shot{
+    border:1px solid var(--line);border-radius:2px;overflow:hidden;
+    background:var(--bg-alt);margin-bottom:20px;aspect-ratio:4/5;
+  }
+  .profile-shot img{
+    width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;
+  }
   .fact-list{border-top:1px solid var(--line);}
   .fact{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
   .fact dt{color:var(--ink-faint);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
@@ -236,6 +248,8 @@
 
   /* ---- responsive ---- */
   @media (max-width:760px){
+    .hero-flex{flex-direction:column-reverse;align-items:center;}
+    .hero-photo{width:150px;margin-bottom:8px;}
     .table-head{display:none;}
     .table-row{grid-template-columns:1fr 1fr;row-gap:14px;}
     .cell-name{grid-column:1/-1;}
@@ -279,11 +293,18 @@
       <div class="cell up">8.45x<small>Across all campaigns</small></div>
     </div>
 
-    <h1>I turn ad spend into <em>qualified leads</em> and sales.</h1>
-    <p class="lede">A performance marketer / media buyer with hands-on experience managing Meta advertising campaigns across e-commerce, fashion, education, B2B, and local businesses — combined with a growing understanding of broader marketing strategy, business economics, analytics, and customer acquisition. Backed by a Computer Science background, which keeps every decision data-first.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#cases">View case studies →</a>
-      <a class="btn btn-ghost" href="mailto:basem.m.abdelsaboor@gmail.com">Get in touch</a>
+    <div class="hero-flex">
+      <div class="hero-main">
+        <h1>I turn ad spend into <em>qualified leads</em> and sales.</h1>
+        <p class="lede">A performance marketer / media buyer with hands-on experience managing Meta advertising campaigns across e-commerce, fashion, education, B2B, and local businesses — combined with a growing understanding of broader marketing strategy, business economics, analytics, and customer acquisition. Backed by a Computer Science background, which keeps every decision data-first.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cases">View case studies →</a>
+          <a class="btn btn-ghost" href="mailto:basem.m.abdelsaboor@gmail.com">Get in touch</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/basem-photo.jpg" alt="Basem Mohamed">
+      </figure>
     </div>
   </section>
 
