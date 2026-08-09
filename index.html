@@ -48,9 +48,9 @@
     border-bottom:1px solid var(--line);
   }
   .topbar-inner{
-    max-width:1080px;margin:0 auto;padding:14px 28px;
+    max-width:1080px;margin:0 auto;padding:11px 28px;
     display:flex;align-items:center;justify-content:space-between;
-    gap:16px;flex-wrap:wrap;
+    gap:14px;flex-wrap:wrap;
   }
   .brand{
     font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
@@ -82,8 +82,34 @@
     html{scroll-behavior:auto;}
   }
 
+  .icon-btn{
+    width:34px;height:34px;border-radius:50%;flex:none;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    transition:background .15s,color .15s;padding:0;
+  }
+  .icon-btn:hover{background:var(--bg-alt);color:var(--ink);}
+  .icon-btn svg{display:block;}
+  .lang-btn{
+    width:auto;padding:0 12px;gap:6px;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;
+  }
+  .header-controls{display:flex;align-items:center;gap:10px;}
+
+  /* ---- RTL / Arabic ---- */
+  html[dir="rtl"] body{--mono:-apple-system,'Segoe UI','Tahoma',Arial,sans-serif;}
+  html[dir="rtl"] .cell,
+  html[dir="rtl"] .case-metric,
+  html[dir="rtl"] .case-stats span,
+  html[dir="rtl"] .exp-tag,
+  html[dir="rtl"] .case-tag,
+  html[dir="rtl"] .fact dd{
+    unicode-bidi:isolate;
+  }
+  html[dir="rtl"] .exp-list li::before{content:"—";left:auto;right:0;}
+  html[dir="rtl"] .exp-list li{padding-left:0;padding-right:16px;}
+
   /* ---- hero: styled as an ads-manager table row ---- */
-  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);}
+  .hero{padding:36px 0 32px;border-bottom:1px solid var(--line);}
   .table-head{
     display:grid;
     grid-template-columns:2fr 1fr 1fr 1.3fr 1fr;
@@ -112,14 +138,14 @@
   }
   .hero h1 em{font-style:normal;color:var(--green);}
   .hero p.lede{
-    max-width:620px;color:var(--ink-soft);font-size:16.5px;line-height:1.65;
+    max-width:620px;color:var(--ink-soft);font-size:17.5px;line-height:1.68;
   }
   .hero-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
   .hero-flex{display:flex;gap:44px;justify-content:space-between;align-items:flex-start;margin-top:40px;}
   .hero-main{flex:1;min-width:0;}
   .hero-main h1{margin-top:0;}
   .hero-photo{
-    flex:none;width:190px;aspect-ratio:4/5;
+    flex:none;width:260px;aspect-ratio:4/5;
     border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--bg-alt);
   }
   .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
@@ -140,13 +166,13 @@
   }
   .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
   h2.section-title{
-    font-family:var(--display);font-weight:600;font-size:28px;margin-bottom:14px;
+    font-family:var(--display);font-weight:600;font-size:29px;margin-bottom:14px;
   }
-  .section-sub{color:var(--ink-soft);max-width:620px;font-size:15px;margin-bottom:28px;}
+  .section-sub{color:var(--ink-soft);max-width:620px;font-size:16px;margin-bottom:28px;}
 
   /* ---- about ---- */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;}
-  .about-grid p{color:var(--ink-soft);font-size:15.5px;line-height:1.75;margin-bottom:16px;}
+  .about-grid p{color:var(--ink-soft);font-size:16.5px;line-height:1.78;margin-bottom:16px;}
   .about-grid p strong{color:var(--ink);font-weight:600;}
   .profile-shot{
     border:1px solid var(--line);border-radius:2px;overflow:hidden;
@@ -156,7 +182,7 @@
     width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;
   }
   .fact-list{border-top:1px solid var(--line);}
-  .fact{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .fact{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;}
   .fact dt{color:var(--ink-faint);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
   .fact dd{font-weight:500;text-align:right;}
 
@@ -167,7 +193,7 @@
   }
   .exp-row:last-child{border-bottom:none;}
   .exp-role{font-family:var(--display);font-weight:600;font-size:17px;}
-  .exp-org{color:var(--ink-soft);font-size:13.5px;margin-top:2px;}
+  .exp-org{color:var(--ink-soft);font-size:14.5px;margin-top:2px;}
   .exp-tag{
     display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;
     color:var(--amber);background:var(--amber-soft);padding:3px 8px;border-radius:2px;
@@ -175,7 +201,7 @@
   .exp-tag.green{color:var(--green);background:var(--green-soft);}
   .exp-list{list-style:none;}
   .exp-list li{
-    position:relative;padding-left:16px;margin-bottom:9px;color:var(--ink-soft);font-size:14.5px;line-height:1.6;
+    position:relative;padding-left:16px;margin-bottom:9px;color:var(--ink-soft);font-size:15.5px;line-height:1.65;
   }
   .exp-list li::before{content:"—";position:absolute;left:0;color:var(--ink-faint);}
   .exp-list b{color:var(--ink);font-weight:600;}
@@ -206,7 +232,7 @@
   }
   .case[open] .chevron{transform:rotate(45deg);}
   .case-body{padding:0 22px 24px;border-top:1px solid var(--line);}
-  .case-body p{color:var(--ink-soft);font-size:14.5px;line-height:1.7;margin:18px 0 14px;max-width:680px;}
+  .case-body p{color:var(--ink-soft);font-size:15.5px;line-height:1.72;margin:18px 0 14px;max-width:680px;}
   .case-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:10px;}
   .case-stats div{font-family:var(--mono);}
   .case-stats span{display:block;font-size:19px;font-weight:500;color:var(--green);}
@@ -231,7 +257,7 @@
   }
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{
-    font-size:13px;padding:6px 11px;border:1px solid var(--line);border-radius:20px;
+    font-size:14px;padding:7px 12px;border:1px solid var(--line);border-radius:20px;
     color:var(--ink-soft);background:var(--panel);
   }
   .chip-row.blue .chip{color:var(--blue);background:var(--blue-soft);border-color:transparent;}
@@ -242,7 +268,7 @@
   .edu-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;padding:16px 0;border-bottom:1px solid var(--line);}
   .edu-row:last-child{border-bottom:none;}
   .edu-name{font-family:var(--display);font-weight:600;font-size:16px;}
-  .edu-meta{color:var(--ink-soft);font-size:13.5px;}
+  .edu-meta{color:var(--ink-soft);font-size:14.5px;}
   .edu-year{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);}
   .badge{
     display:inline-flex;align-items:center;gap:8px;margin-top:18px;
@@ -255,17 +281,17 @@
   .contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;}
   footer h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.1;margin-bottom:18px;}
   .contact-list{list-style:none;}
-  .contact-list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px;}
+  .contact-list li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:15px;}
   .contact-list li a{text-decoration:none;font-family:var(--mono);word-break:break-word;text-align:right;}
   .contact-list li span:first-child{color:var(--ink-faint);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
   .foot-note{margin-top:36px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);}
 
   /* ---- responsive ---- */
   @media (max-width:760px){
-    section{padding:40px 0;}
-    .hero{padding:44px 0 30px;}
-    .hero-flex{flex-direction:column-reverse;align-items:center;gap:28px;}
-    .hero-photo{width:150px;margin-bottom:4px;}
+    section{padding:36px 0;}
+    .hero{padding:28px 0 24px;}
+    .hero-flex{flex-direction:column-reverse;align-items:center;gap:24px;}
+    .hero-photo{width:100%;max-width:420px;margin-bottom:2px;}
     .hero h1{font-size:clamp(28px,7vw,40px);}
     .table-head{display:none;}
     .table-row{grid-template-columns:1fr 1fr;row-gap:14px;padding:16px 0;}
@@ -301,14 +327,24 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><b>Basem Mohamed</b> · Media Buyer</div>
+    <div class="brand" data-ar='<b>باسم محمد</b> · مسوّق إعلانات'><b>Basem Mohamed</b> · Media Buyer</div>
     <nav class="links">
-      <a href="#experience">Experience</a>
-      <a href="#cases">Case Studies</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#experience" data-ar='الخبرة'>Experience</a>
+      <a href="#cases" data-ar='دراسات الحالة'>Case Studies</a>
+      <a href="#skills" data-ar='المهارات'>Skills</a>
+      <a href="#contact" data-ar='تواصل'>Contact</a>
     </nav>
-    <div class="status-pill"><span class="dot"></span>Available for work</div>
+    <div class="header-controls">
+      <div class="status-pill" data-ar='<span class="dot"></span>متاح للعمل'><span class="dot"></span>Available for work</div>
+      <button id="sound-toggle" class="icon-btn" type="button" aria-label="Toggle click sound" aria-pressed="false" title="Toggle click sound">
+        <svg id="icon-sound-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+        <svg id="icon-sound-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+      </button>
+      <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Toggle Arabic / English" title="عربي / English">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span id="lang-label">AR</span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -317,23 +353,23 @@
   <!-- HERO -->
   <section class="hero" style="border-bottom:none;">
     <div class="table-head">
-      <div>Campaign</div><div>Delivery</div><div>Experience</div><div>Ad Spend Managed</div><div>Total Avg. ROAS</div>
+      <div data-ar='الحملة'>Campaign</div><div data-ar='الحالة'>Delivery</div><div data-ar='الخبرة'>Experience</div><div data-ar='الإنفاق الإعلاني المُدار'>Ad Spend Managed</div><div data-ar='متوسط العائد على الإنفاق'>Total Avg. ROAS</div>
     </div>
     <div class="table-row">
-      <div class="cell-name">Basem Mohamed<span>Performance Marketer / Media Buyer</span></div>
-      <div class="cell up">● Active</div>
-      <div class="cell">6 mo<small>Hands-on</small></div>
-      <div class="cell">60K+ EGP<small>Internship + freelance</small></div>
-      <div class="cell up">8.45x<small>Across all campaigns</small></div>
+      <div class="cell-name" data-ar='باسم محمد<span>مسوّق أداء / مشتري إعلانات</span>'>Basem Mohamed<span>Performance Marketer / Media Buyer</span></div>
+      <div class="cell up" data-ar='● نشط'>● Active</div>
+      <div class="cell" data-ar='6 أشهر<small>خبرة عملية</small>'>6 mo<small>Hands-on</small></div>
+      <div class="cell" data-ar='+60 ألف جنيه<small>تدريب + عمل حر</small>'>60K+ EGP<small>Internship + freelance</small></div>
+      <div class="cell up" data-ar='8.45x<small>عبر جميع الحملات</small>'>8.45x<small>Across all campaigns</small></div>
     </div>
 
     <div class="hero-flex">
       <div class="hero-main">
-        <h1>I turn ad spend into <em>qualified leads</em> and sales.</h1>
-        <p class="lede">A performance marketer / media buyer with hands-on experience managing Meta advertising campaigns across e-commerce, fashion, education, B2B, and local businesses — combined with a growing understanding of broader marketing strategy, business economics, analytics, and customer acquisition. Backed by a Computer Science background, which keeps every decision data-first.</p>
+        <h1 data-ar='أحوّل الإنفاق الإعلاني إلى <em>عملاء مؤهلين</em> ومبيعات فعلية.'>I turn ad spend into <em>qualified leads</em> and sales.</h1>
+        <p class="lede" data-ar='مسوّق أداء / مشتري إعلانات لديه خبرة عملية في إدارة حملات إعلانات ميتا عبر التجارة الإلكترونية والأزياء والتعليم وB2B والأعمال المحلية — إلى جانب فهم متنامٍ لاستراتيجية التسويق الأوسع، واقتصاديات الأعمال، والتحليلات، واكتساب العملاء. مدعوم بخلفية في علوم الحاسب تجعل كل قرار قائمًا على البيانات أولًا.'>A performance marketer / media buyer with hands-on experience managing Meta advertising campaigns across e-commerce, fashion, education, B2B, and local businesses — combined with a growing understanding of broader marketing strategy, business economics, analytics, and customer acquisition. Backed by a Computer Science background, which keeps every decision data-first.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#cases">View case studies →</a>
-          <a class="btn btn-ghost" href="https://wa.me/201151930659" target="_blank" rel="noopener">Get in touch</a>
+          <a class="btn btn-primary" href="#cases" data-ar='عرض دراسات الحالة ←'>View case studies →</a>
+          <a class="btn btn-ghost" href="https://wa.me/201151930659" target="_blank" rel="noopener" data-ar='تواصل معي'>Get in touch</a>
         </div>
       </div>
       <figure class="hero-photo">
@@ -344,167 +380,167 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="eyebrow">01 — Summary</div>
+    <div class="eyebrow" data-ar='01 — نبذة'>01 — Summary</div>
     <div class="about-grid">
       <div>
-        <p>I manage <strong>Meta, TikTok, and Google Ads</strong> campaigns end-to-end — strategy, budget allocation, creative testing, audience targeting, and performance reporting — with the goal of improving ROI, not just impressions.</p>
-        <p>My background is <strong>Computer Science</strong> at Cairo University, which shapes how I approach media buying: as a data problem first. I look for patterns in cost-per-result, structure campaigns to isolate variables, and report performance the way I'd document any analysis — clearly, and backed by numbers.</p>
-        <p>I've run campaigns across very different account types — a high-spend e-commerce brand, multi-branch academy launches, fashion, and B2B — which means I've had to adapt targeting and creative strategy to very different buyer journeys, not apply one playbook everywhere.</p>
+        <p data-ar='أدير حملات <strong>ميتا وتيك توك وجوجل أدز</strong> من الألف إلى الياء — من الاستراتيجية وتوزيع الميزانية إلى اختبار الإبداعات واستهداف الجمهور وتقارير الأداء — بهدف تحسين العائد على الاستثمار، وليس مجرد الانطباعات.'>I manage <strong>Meta, TikTok, and Google Ads</strong> campaigns end-to-end — strategy, budget allocation, creative testing, audience targeting, and performance reporting — with the goal of improving ROI, not just impressions.</p>
+        <p data-ar='خلفيتي الدراسية في <strong>علوم الحاسب</strong> بجامعة القاهرة، وهذا يشكّل طريقتي في التعامل مع شراء الإعلانات: كمسألة بيانات في المقام الأول. أبحث عن الأنماط في تكلفة النتيجة، وأبني هيكل الحملات بحيث أعزل المتغيرات، وأوثّق الأداء بنفس الطريقة التي أوثّق بها أي تحليل — بوضوح ومدعوم بالأرقام.'>My background is <strong>Computer Science</strong> at Cairo University, which shapes how I approach media buying: as a data problem first. I look for patterns in cost-per-result, structure campaigns to isolate variables, and report performance the way I'd document any analysis — clearly, and backed by numbers.</p>
+        <p data-ar='أدرت حملات لأنواع حسابات مختلفة تمامًا — من علامة تجارية للتجارة الإلكترونية بإنفاق مرتفع، إلى إطلاق فروع أكاديميات متعددة، وأزياء، وقطاع B2B — وهذا يعني أنني اضطررت لتكييف الاستهداف والاستراتيجية الإبداعية مع رحلات شراء مختلفة تمامًا، بدلًا من تطبيق خطة واحدة على الجميع.'>I've run campaigns across very different account types — a high-spend e-commerce brand, multi-branch academy launches, fashion, and B2B — which means I've had to adapt targeting and creative strategy to very different buyer journeys, not apply one playbook everywhere.</p>
       </div>
       <dl class="fact-list">
-        <div class="fact"><dt>Location</dt><dd>New Cairo, Egypt</dd></div>
-        <div class="fact"><dt>Platforms</dt><dd>Meta · TikTok · Google</dd></div>
-        <div class="fact"><dt>Education</dt><dd>B.Sc. Computer Science</dd></div>
-        <div class="fact"><dt>Languages</dt><dd>Arabic · English</dd></div>
-        <div class="fact"><dt>Industries</dt><dd>E-com · Fashion · Education · B2B</dd></div>
+        <div class="fact"><dt data-ar='الموقع'>Location</dt><dd data-ar='القاهرة الجديدة، مصر'>New Cairo, Egypt</dd></div>
+        <div class="fact"><dt data-ar='المنصات'>Platforms</dt><dd>Meta · TikTok · Google</dd></div>
+        <div class="fact"><dt data-ar='التعليم'>Education</dt><dd data-ar='بكالوريوس علوم الحاسب'>B.Sc. Computer Science</dd></div>
+        <div class="fact"><dt data-ar='اللغات'>Languages</dt><dd data-ar='العربية · الإنجليزية'>Arabic · English</dd></div>
+        <div class="fact"><dt data-ar='المجالات'>Industries</dt><dd data-ar='تجارة إلكترونية · أزياء · تعليم · B2B'>E-com · Fashion · Education · B2B</dd></div>
       </dl>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="eyebrow">02 — Experience</div>
-    <h2 class="section-title">Where I've worked</h2>
+    <div class="eyebrow" data-ar='02 — الخبرة'>02 — Experience</div>
+    <h2 class="section-title" data-ar='أماكن عملي'>Where I've worked</h2>
 
     <div class="exp-row">
       <div>
-        <div class="exp-role">Media Buyer Intern</div>
-        <div class="exp-org">De Backers (EST. 1986)</div>
-        <span class="exp-tag green">4.14x ROAS</span>
+        <div class="exp-role" data-ar='متدرب مشتري إعلانات'>Media Buyer Intern</div>
+        <div class="exp-org" data-ar='De Backers (تأسست عام 1986)'>De Backers (EST. 1986)</div>
+        <span class="exp-tag green" data-ar='4.14x عائد الإنفاق'>4.14x ROAS</span>
       </div>
       <ul class="exp-list">
-        <li>Managed and optimized Meta Ads campaigns for a high-budget e-commerce account, with <b>monthly ad spend exceeding 660,000 EGP</b>, focused on sales growth and campaign efficiency.</li>
-        <li>Achieved an <b>average 4.14 ROAS</b> across managed campaigns by optimizing audience targeting, creative, and campaign structure.</li>
-        <li>Analyzed campaign performance, built reports, and implemented data-driven optimizations to improve key metrics.</li>
+        <li data-ar='أدرت وحسّنت حملات إعلانات ميتا لحساب تجارة إلكترونية بميزانية كبيرة، بإنفاق إعلاني شهري <b>يتجاوز 660,000 جنيه مصري</b>، مع التركيز على نمو المبيعات وكفاءة الحملات.'>Managed and optimized Meta Ads campaigns for a high-budget e-commerce account, with <b>monthly ad spend exceeding 660,000 EGP</b>, focused on sales growth and campaign efficiency.</li>
+        <li data-ar='حققت <b>متوسط عائد إنفاق إعلاني 4.14</b> عبر الحملات التي أدرتها من خلال تحسين استهداف الجمهور والإبداعات وهيكل الحملة.'>Achieved an <b>average 4.14 ROAS</b> across managed campaigns by optimizing audience targeting, creative, and campaign structure.</li>
+        <li data-ar='حللت أداء الحملات، وأعددت التقارير، ونفذت تحسينات قائمة على البيانات لرفع المؤشرات الرئيسية.'>Analyzed campaign performance, built reports, and implemented data-driven optimizations to improve key metrics.</li>
       </ul>
     </div>
 
     <div class="exp-row">
       <div>
-        <div class="exp-role">Freelance Media Buyer</div>
-        <div class="exp-org">Independent clients</div>
-        <span class="exp-tag">26K+ EGP managed</span>
+        <div class="exp-role" data-ar='مشتري إعلانات حر'>Freelance Media Buyer</div>
+        <div class="exp-org" data-ar='عملاء مستقلون'>Independent clients</div>
+        <span class="exp-tag" data-ar='+26 ألف جنيه تم إدارتها'>26K+ EGP managed</span>
       </div>
       <ul class="exp-list">
-        <li>Planned, launched, and optimized Meta Ads campaigns for clients across <b>fashion, B2B industrial services, and education</b>, aligning each strategy with the client's actual business goal.</li>
-        <li>Managed marketing campaigns for <b>4 independent academy branches</b>, tailoring targeting and creative to each branch's local audience.</li>
-        <li>Maintained long-term partnerships with most clients while managing cumulative ad spend of 26,000+ EGP.</li>
+        <li data-ar='خططت وأطلقت وحسّنت حملات إعلانات ميتا لعملاء في مجالات <b>الأزياء، والخدمات الصناعية B2B، والتعليم</b>، مع مواءمة كل استراتيجية مع الهدف التجاري الفعلي للعميل.'>Planned, launched, and optimized Meta Ads campaigns for clients across <b>fashion, B2B industrial services, and education</b>, aligning each strategy with the client's actual business goal.</li>
+        <li data-ar='أدرت حملات تسويقية لـ<b>4 فروع مستقلة لأكاديمية</b>، مع تخصيص الاستهداف والإبداع لجمهور كل فرع محليًا.'>Managed marketing campaigns for <b>4 independent academy branches</b>, tailoring targeting and creative to each branch's local audience.</li>
+        <li data-ar='حافظت على شراكات طويلة الأمد مع معظم العملاء أثناء إدارة إنفاق إعلاني تراكمي تجاوز 26,000 جنيه.'>Maintained long-term partnerships with most clients while managing cumulative ad spend of 26,000+ EGP.</li>
       </ul>
     </div>
   </section>
 
   <!-- CASE STUDIES -->
   <section id="cases">
-    <div class="eyebrow">03 — Case Studies</div>
-    <h2 class="section-title">Campaigns, from the account itself</h2>
-    <p class="section-sub">Pulled directly from Ads Manager — real delivery data from accounts I've managed. Click a row to expand.</p>
+    <div class="eyebrow" data-ar='03 — دراسات الحالة'>03 — Case Studies</div>
+    <h2 class="section-title" data-ar='حملات، مباشرة من الحساب'>Campaigns, from the account itself</h2>
+    <p class="section-sub" data-ar='مسحوبة مباشرة من مدير الإعلانات — بيانات تسليم حقيقية من حسابات أدرتها. اضغط على أي صف لعرض التفاصيل.'>Pulled directly from Ads Manager — real delivery data from accounts I've managed. Click a row to expand.</p>
 
     <details class="case" open>
       <summary>
-        <div><div class="case-name">Multi-Branch Academy Launches</div><div class="case-tag blue">Education · Lead Gen</div></div>
-        <div class="case-metric">1.48–3.07 EGP<small>Cost / result</small></div>
-        <div class="case-metric">600+<small>Messaging leads</small></div>
-        <div class="case-metric">28K+<small>Reach, top campaign</small></div>
+        <div><div class="case-name" data-ar='إطلاق فروع أكاديمية متعددة'>Multi-Branch Academy Launches</div><div class="case-tag blue" data-ar='تعليم · جذب عملاء محتملين'>Education · Lead Gen</div></div>
+        <div class="case-metric" data-ar='1.48–3.07 جنيه<small>التكلفة / النتيجة</small>'>1.48–3.07 EGP<small>Cost / result</small></div>
+        <div class="case-metric" data-ar='+600<small>محادثات جذب عملاء</small>'>600+<small>Messaging leads</small></div>
+        <div class="case-metric" data-ar='+28 ألف<small>الوصول، أفضل حملة</small>'>28K+<small>Reach, top campaign</small></div>
         <div class="chevron">+</div>
       </summary>
       <div class="case-body">
-        <p>Ran Meta lead-gen campaigns for a chain of academy branches (matches the 4-branch academy work on my CV), each launch needing its own local targeting rather than one shared campaign. Objective was Messenger conversations — the client's actual sales pipeline starts with a chat, not a form.</p>
+        <p data-ar='أدرت حملات جذب عملاء عبر ميتا لسلسلة فروع أكاديمية (تطابق عمل الأربعة فروع المذكور في سيرتي الذاتية)، حيث احتاج كل إطلاق فرع استهدافًا محليًا خاصًا به بدلًا من حملة واحدة مشتركة. كان الهدف هو محادثات ماسنجر — لأن مسار المبيعات الفعلي للعميل يبدأ بمحادثة، وليس بنموذج.'>Ran Meta lead-gen campaigns for a chain of academy branches (matches the 4-branch academy work on my CV), each launch needing its own local targeting rather than one shared campaign. Objective was Messenger conversations — the client's actual sales pipeline starts with a chat, not a form.</p>
         <figure class="case-shot">
           <img src="images/academy-account.png" alt="Live campaign delivery — academy launch account, Ads Manager" loading="lazy">
-          <figcaption>Live campaign delivery — academy launch account, Ads Manager</figcaption>
+          <figcaption data-ar='أداء حملة مباشر — حساب إطلاق الأكاديمية، مدير الإعلانات'>Live campaign delivery — academy launch account, Ads Manager</figcaption>
         </figure>
         <div class="case-stats">
-          <div><span>600</span><small>Results — best campaign</small></div>
-          <div><span>1.48 EGP</span><small>Cost per result — best campaign</small></div>
-          <div><span>418</span><small>Results — Gardenia branch launch</small></div>
-          <div><span>2.08 EGP</span><small>Cost per result — Gardenia branch</small></div>
+          <div data-ar='<span>600</span><small>النتائج — أفضل حملة</small>'><span>600</span><small>Results — best campaign</small></div>
+          <div data-ar='<span>1.48 جنيه</span><small>تكلفة النتيجة — أفضل حملة</small>'><span>1.48 EGP</span><small>Cost per result — best campaign</small></div>
+          <div data-ar='<span>418</span><small>النتائج — إطلاق فرع الجاردينيا</small>'><span>418</span><small>Results — Gardenia branch launch</small></div>
+          <div data-ar='<span>2.08 جنيه</span><small>تكلفة النتيجة — فرع الجاردينيا</small>'><span>2.08 EGP</span><small>Cost per result — Gardenia branch</small></div>
         </div>
-        <p class="case-note">Figures from live Ads Manager account, lifetime/campaign totals.</p>
+        <p class="case-note" data-ar='الأرقام من حساب مدير إعلانات حقيقي، إجماليات مدى الحملة.'>Figures from live Ads Manager account, lifetime/campaign totals.</p>
       </div>
     </details>
 
     <details class="case">
       <summary>
-        <div><div class="case-name">Fashion E-commerce — Sales &amp; Engagement</div><div class="case-tag rose">Fashion · Retail</div></div>
-        <div class="case-metric">2.58 EGP<small>Best cost / result</small></div>
-        <div class="case-metric">250<small>Conversations, top ad set</small></div>
-        <div class="case-metric">6 active<small>Campaigns, 30 days</small></div>
+        <div><div class="case-name" data-ar='تجارة إلكترونية للأزياء — مبيعات وتفاعل'>Fashion E-commerce — Sales &amp; Engagement</div><div class="case-tag rose" data-ar='أزياء · تجزئة'>Fashion · Retail</div></div>
+        <div class="case-metric" data-ar='2.58 جنيه<small>أفضل تكلفة / نتيجة</small>'>2.58 EGP<small>Best cost / result</small></div>
+        <div class="case-metric" data-ar='250<small>محادثات، أفضل مجموعة إعلانية</small>'>250<small>Conversations, top ad set</small></div>
+        <div class="case-metric" data-ar='6 نشطة<small>حملات، آخر 30 يوم</small>'>6 active<small>Campaigns, 30 days</small></div>
         <div class="chevron">+</div>
       </summary>
       <div class="case-body">
-        <p>Managed a fashion e-commerce account running parallel sales and engagement campaigns. Split budget across a core "Sale" campaign and product-led ad sets (e.g. a best-selling dress), then reallocated spend toward the ad sets converting messaging conversations most efficiently.</p>
+        <p data-ar='أدرت حساب تجارة إلكترونية للأزياء يشغّل حملات مبيعات وتفاعل بالتوازي. قسّمت الميزانية بين حملة "تخفيضات" أساسية ومجموعات إعلانية مرتبطة بمنتجات محددة (مثل فستان الأكثر مبيعًا)، ثم أعدت توزيع الإنفاق نحو المجموعات الإعلانية الأكثر كفاءة في تحويل محادثات الماسنجر.'>Managed a fashion e-commerce account running parallel sales and engagement campaigns. Split budget across a core "Sale" campaign and product-led ad sets (e.g. a best-selling dress), then reallocated spend toward the ad sets converting messaging conversations most efficiently.</p>
         <figure class="case-shot">
           <img src="images/fashion-account.png" alt="Live campaign delivery — fashion e-commerce account, Ads Manager" loading="lazy">
-          <figcaption>Live campaign delivery — fashion e-commerce account, Ads Manager</figcaption>
+          <figcaption data-ar='أداء حملة مباشر — حساب تجارة الأزياء الإلكترونية، مدير الإعلانات'>Live campaign delivery — fashion e-commerce account, Ads Manager</figcaption>
         </figure>
         <div class="case-stats">
-          <div><span>250</span><small>Results — best-performing ad set</small></div>
-          <div><span>2.58 EGP</span><small>Cost per result — best ad set</small></div>
-          <div><span>74</span><small>Results — product-specific ad set</small></div>
-          <div><span>61K</span><small>Reach — best-performing ad set</small></div>
+          <div data-ar='<span>250</span><small>النتائج — أفضل مجموعة إعلانية</small>'><span>250</span><small>Results — best-performing ad set</small></div>
+          <div data-ar='<span>2.58 جنيه</span><small>تكلفة النتيجة — أفضل مجموعة</small>'><span>2.58 EGP</span><small>Cost per result — best ad set</small></div>
+          <div data-ar='<span>74</span><small>النتائج — مجموعة إعلانية لمنتج محدد</small>'><span>74</span><small>Results — product-specific ad set</small></div>
+          <div data-ar='<span>61 ألف</span><small>الوصول — أفضل مجموعة إعلانية</small>'><span>61K</span><small>Reach — best-performing ad set</small></div>
         </div>
-        <p class="case-note">Last-30-day snapshot from the live account.</p>
+        <p class="case-note" data-ar='لقطة من آخر 30 يومًا من الحساب الفعلي.'>Last-30-day snapshot from the live account.</p>
       </div>
     </details>
 
     <details class="case">
       <summary>
-        <div><div class="case-name">B2B Industrial / Mechanical Startup</div><div class="case-tag amber">B2B · Lead Gen</div></div>
-        <div class="case-metric">26.5–33.7 EGP<small>Cost / result</small></div>
-        <div class="case-metric">130+<small>Qualified conversations</small></div>
-        <div class="case-metric">12K+<small>Reach, top campaign</small></div>
+        <div><div class="case-name" data-ar='شركة ناشئة صناعية/ميكانيكية B2B'>B2B Industrial / Mechanical Startup</div><div class="case-tag amber" data-ar='B2B · جذب عملاء محتملين'>B2B · Lead Gen</div></div>
+        <div class="case-metric" data-ar='26.5–33.7 جنيه<small>التكلفة / النتيجة</small>'>26.5–33.7 EGP<small>Cost / result</small></div>
+        <div class="case-metric" data-ar='+130<small>محادثات مؤهلة</small>'>130+<small>Qualified conversations</small></div>
+        <div class="case-metric" data-ar='+12 ألف<small>الوصول، أفضل حملة</small>'>12K+<small>Reach, top campaign</small></div>
         <div class="chevron">+</div>
       </summary>
       <div class="case-body">
-        <p>B2B lead generation for a mechanical/industrial startup — a colder, narrower audience than consumer accounts, which shows up directly in cost per result. Focus was on messaging-conversation volume as a proxy for sales-qualified interest, since B2B decision-makers rarely convert on the first touch.</p>
+        <p data-ar='جذب عملاء محتملين B2B لشركة ناشئة ميكانيكية/صناعية — جمهور أضيق وأبرد مقارنة بالحسابات الاستهلاكية، وهو ما ينعكس مباشرة في تكلفة النتيجة. كان التركيز على حجم محادثات الماسنجر كمؤشر على اهتمام مؤهل للمبيعات، لأن صانعي القرار في B2B نادرًا ما يتحوّلون من أول تواصل.'>B2B lead generation for a mechanical/industrial startup — a colder, narrower audience than consumer accounts, which shows up directly in cost per result. Focus was on messaging-conversation volume as a proxy for sales-qualified interest, since B2B decision-makers rarely convert on the first touch.</p>
         <figure class="case-shot">
           <img src="images/b2b-account.png" alt="Live campaign delivery — B2B/mechanical startup account, Ads Manager" loading="lazy">
-          <figcaption>Live campaign delivery — B2B/mechanical startup account, Ads Manager</figcaption>
+          <figcaption data-ar='أداء حملة مباشر — حساب الشركة الناشئة B2B، مدير الإعلانات'>Live campaign delivery — B2B/mechanical startup account, Ads Manager</figcaption>
         </figure>
         <div class="case-stats">
-          <div><span>71</span><small>Results — top campaign</small></div>
-          <div><span>26.53 EGP</span><small>Cost per result — best campaign</small></div>
-          <div><span>12,187</span><small>Reach — best campaign</small></div>
-          <div><span>3</span><small>Campaigns tested in parallel</small></div>
+          <div data-ar='<span>71</span><small>النتائج — أفضل حملة</small>'><span>71</span><small>Results — top campaign</small></div>
+          <div data-ar='<span>26.53 جنيه</span><small>تكلفة النتيجة — أفضل حملة</small>'><span>26.53 EGP</span><small>Cost per result — best campaign</small></div>
+          <div data-ar='<span>12,187</span><small>الوصول — أفضل حملة</small>'><span>12,187</span><small>Reach — best campaign</small></div>
+          <div data-ar='<span>3</span><small>حملات تم اختبارها بالتوازي</small>'><span>3</span><small>Campaigns tested in parallel</small></div>
         </div>
-        <p class="case-note">Figures from live Ads Manager account, lifetime totals.</p>
+        <p class="case-note" data-ar='الأرقام من حساب مدير إعلانات حقيقي، إجماليات إجمالية.'>Figures from live Ads Manager account, lifetime totals.</p>
       </div>
     </details>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="eyebrow">04 — Skills</div>
-    <h2 class="section-title">Toolkit</h2>
+    <div class="eyebrow" data-ar='04 — المهارات'>04 — Skills</div>
+    <h2 class="section-title" data-ar='الأدوات'>Toolkit</h2>
     <div class="skill-groups">
       <div class="skill-group">
-        <h3>Advertising Platforms</h3>
+        <h3 data-ar='منصات الإعلانات'>Advertising Platforms</h3>
         <div class="chip-row blue">
-          <span class="chip">Meta Ads (Facebook &amp; Instagram)</span>
-          <span class="chip">TikTok Ads</span>
-          <span class="chip">Google Ads</span>
+          <span class="chip" data-ar='إعلانات ميتا (فيسبوك وإنستغرام)'>Meta Ads (Facebook &amp; Instagram)</span>
+          <span class="chip" data-ar='إعلانات تيك توك'>TikTok Ads</span>
+          <span class="chip" data-ar='إعلانات جوجل'>Google Ads</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>Marketing &amp; Analysis</h3>
+        <h3 data-ar='التسويق والتحليل'>Marketing &amp; Analysis</h3>
         <div class="chip-row amber">
-          <span class="chip">Market Research</span>
-          <span class="chip">Branding</span>
-          <span class="chip">Market Segmentation</span>
-          <span class="chip">Competitor Analysis</span>
-          <span class="chip">Product Thinking</span>
-          <span class="chip">Requirement Analysis</span>
+          <span class="chip" data-ar='أبحاث السوق'>Market Research</span>
+          <span class="chip" data-ar='بناء العلامة التجارية'>Branding</span>
+          <span class="chip" data-ar='تقسيم السوق'>Market Segmentation</span>
+          <span class="chip" data-ar='تحليل المنافسين'>Competitor Analysis</span>
+          <span class="chip" data-ar='التفكير المنتج'>Product Thinking</span>
+          <span class="chip" data-ar='تحليل المتطلبات'>Requirement Analysis</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>Working Style</h3>
+        <h3 data-ar='أسلوب العمل'>Working Style</h3>
         <div class="chip-row green">
-          <span class="chip">Communication</span>
-          <span class="chip">Teamwork</span>
-          <span class="chip">Problem-solving</span>
-          <span class="chip">Critical thinking</span>
-          <span class="chip">Fast learner</span>
-          <span class="chip">Negotiation basics</span>
+          <span class="chip" data-ar='التواصل'>Communication</span>
+          <span class="chip" data-ar='العمل الجماعي'>Teamwork</span>
+          <span class="chip" data-ar='حل المشكلات'>Problem-solving</span>
+          <span class="chip" data-ar='التفكير النقدي'>Critical thinking</span>
+          <span class="chip" data-ar='سريع التعلم'>Fast learner</span>
+          <span class="chip" data-ar='أساسيات التفاوض'>Negotiation basics</span>
         </div>
       </div>
     </div>
@@ -512,15 +548,15 @@
 
   <!-- EDUCATION -->
   <section id="education" style="border-bottom:none;">
-    <div class="eyebrow">05 — Education &amp; Recognition</div>
+    <div class="eyebrow" data-ar='05 — التعليم والتقدير'>05 — Education &amp; Recognition</div>
     <div class="edu-row">
       <div>
-        <div class="edu-name">B.Sc. Computer Science</div>
-        <div class="edu-meta">Faculty of Computers &amp; AI, Cairo University — Giza, Egypt · GPA 3.1</div>
+        <div class="edu-name" data-ar='بكالوريوس علوم الحاسب'>B.Sc. Computer Science</div>
+        <div class="edu-meta" data-ar='كلية الحاسبات والذكاء الاصطناعي، جامعة القاهرة — الجيزة، مصر · المعدل التراكمي 3.1'>Faculty of Computers &amp; AI, Cairo University — Giza, Egypt · GPA 3.1</div>
       </div>
-      <div class="edu-year">2024 – 2028 (Expected)</div>
+      <div class="edu-year" data-ar='2024 – 2028 (متوقع)'>2024 – 2028 (Expected)</div>
     </div>
-    <span class="badge">🏆 4th place — FINYOLOGY Competition, college level (organized by the CBE)</span>
+    <span class="badge" data-ar='🏆 المركز الرابع — مسابقة FINYOLOGY على مستوى الكلية (تنظيم البنك المركزي المصري)'>🏆 4th place — FINYOLOGY Competition, college level (organized by the CBE)</span>
   </section>
 
 </div>
@@ -530,17 +566,17 @@
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <h2>Let's talk about your next campaign.</h2>
-        <p class="section-sub" style="margin-bottom:0;">Open to media buying roles, freelance projects, and campaign audits.</p>
+        <h2 data-ar='لنتحدث عن حملتك القادمة.'>Let's talk about your next campaign.</h2>
+        <p class="section-sub" style="margin-bottom:0;" data-ar='متاح لأدوار شراء الإعلانات، والمشاريع الحرة، ومراجعات الحملات.'>Open to media buying roles, freelance projects, and campaign audits.</p>
       </div>
       <ul class="contact-list">
-        <li><span>Email</span><a href="mailto:basem.m.abdelsaboor@gmail.com">basem.m.abdelsaboor@gmail.com</a></li>
-        <li><span>Phone</span><a href="https://wa.me/201151930659" target="_blank" rel="noopener">+20 01151930659</a></li>
-        <li><span>Location</span><span>New Cairo, Egypt</span></li>
-        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/basemmmohamedd/" target="_blank" rel="noopener">linkedin.com/in/basemmmohamedd</a></li>
+        <li><span data-ar='البريد الإلكتروني'>Email</span><a href="mailto:basem.m.abdelsaboor@gmail.com">basem.m.abdelsaboor@gmail.com</a></li>
+        <li><span data-ar='الهاتف'>Phone</span><a href="https://wa.me/201151930659" target="_blank" rel="noopener">+20 01151930659</a></li>
+        <li><span data-ar='الموقع'>Location</span><span data-ar='القاهرة الجديدة، مصر'>New Cairo, Egypt</span></li>
+        <li><span data-ar='لينكدإن'>LinkedIn</span><a href="https://www.linkedin.com/in/basemmmohamedd/" target="_blank" rel="noopener">linkedin.com/in/basemmmohamedd</a></li>
       </ul>
     </div>
-    <div class="foot-note">© 2026 Basem Mohamed — Built as a live portfolio, updated as campaigns close.</div>
+    <div class="foot-note" data-ar='© 2026 باسم محمد — موقع بورتفوليو حيّ، يتم تحديثه مع إغلاق كل حملة.'>© 2026 Basem Mohamed — Built as a live portfolio, updated as campaigns close.</div>
   </div>
 </footer>
 
@@ -549,7 +585,13 @@
 <script>
   (function(){
     var sound = document.getElementById('click-sound');
+    var soundEnabled = true;
+    var soundToggle = document.getElementById('sound-toggle');
+    var iconOn = document.getElementById('icon-sound-on');
+    var iconOff = document.getElementById('icon-sound-off');
+
     document.addEventListener('click', function(e){
+      if(!soundEnabled) return;
       var el = e.target.closest('a, button, summary');
       if(!el) return;
       try{
@@ -557,6 +599,45 @@
         sound.play().catch(function(){});
       }catch(err){}
     }, true);
+
+    soundToggle.addEventListener('click', function(){
+      soundEnabled = !soundEnabled;
+      iconOn.style.display = soundEnabled ? 'block' : 'none';
+      iconOff.style.display = soundEnabled ? 'none' : 'block';
+      soundToggle.setAttribute('aria-pressed', String(!soundEnabled));
+    });
+
+    // ---- language toggle ----
+    var langToggle = document.getElementById('lang-toggle');
+    var langLabel = document.getElementById('lang-label');
+    var htmlEl = document.documentElement;
+    var currentLang = 'en';
+
+    // cache original English HTML for every translatable node once, up front
+    var nodes = document.querySelectorAll('[data-ar]');
+    nodes.forEach(function(node){
+      node.dataset.en = node.innerHTML;
+    });
+
+    function setLang(lang){
+      currentLang = lang;
+      nodes.forEach(function(node){
+        node.innerHTML = lang === 'ar' ? node.dataset.ar : node.dataset.en;
+      });
+      if(lang === 'ar'){
+        htmlEl.setAttribute('dir','rtl');
+        htmlEl.setAttribute('lang','ar');
+        langLabel.textContent = 'EN';
+      } else {
+        htmlEl.setAttribute('dir','ltr');
+        htmlEl.setAttribute('lang','en');
+        langLabel.textContent = 'AR';
+      }
+    }
+
+    langToggle.addEventListener('click', function(){
+      setLang(currentLang === 'en' ? 'ar' : 'en');
+    });
   })();
 </script>
 </body>
