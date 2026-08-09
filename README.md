@@ -1,4 +1,3 @@
-Perfect. Here’s a README focused **only on the content/data of your portfolio website**, keeping the information consistent with what you provided.
 
 # Basem Mohamed — Portfolio
 
