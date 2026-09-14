@@ -46,6 +46,13 @@
         });
       });
     }
+    // pixel code
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof window.oaiq === "function") {
+        window.oaiq("measure", "page_viewed", { type: "contents" });
+      }
+    });
+  
 
     // ---- language toggle (English / Arabic) ----
     var langToggle = document.getElementById('lang-toggle');
