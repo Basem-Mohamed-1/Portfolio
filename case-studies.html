@@ -55,7 +55,7 @@
     <h2 class="section-title" data-ar='حملات، مباشرة من الحساب'>Campaigns, from the account itself</h2>
     <p class="section-sub" data-ar='مسحوبة مباشرة من مدير الإعلانات — بيانات تسليم حقيقية من حسابات أدرتها. اضغط على أي صف لعرض التفاصيل.'>Pulled directly from Ads Manager — real delivery data from accounts I've managed. Click a row to expand.</p>
 
-      <details class="case" ontoggle="if(this.close && typeof window.oaiq === 'function'){ window.oaiq('measure', 'contents_viewed', { type: 'contents' }); }">
+      <details class="case" open">
           <summary>
             <div><div class="case-name" data-ar='تجارة إلكترونية للأزياء — مبيعات وتفاعل'>Fashion E-commerce — Sales &amp; Engagement</div><div class="case-tag rose" data-ar='أزياء · تجزئة'>Fashion · Retail</div></div>
             <div class="case-metric" data-ar='2.58 جنيه<small>أفضل تكلفة / نتيجة</small>'>2.58 EGP<small>Best cost / result</small></div>
@@ -140,6 +140,16 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js">
+  document.querySelectorAll('details.case').forEach((details) => {
+  details.addEventListener('toggle', () => {
+    if (details.open && typeof window.oaiq === 'function') {
+      window.oaiq('measure', 'contents_viewed', {
+        type: 'contents'
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
