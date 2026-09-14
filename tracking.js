@@ -1,3 +1,5 @@
+
+// event of viewing case stuides
 document.querySelectorAll('details.case').forEach((details) => {
   details.addEventListener('toggle', () => {
     if (details.open && typeof window.oaiq === 'function') {
@@ -6,4 +8,13 @@ document.querySelectorAll('details.case').forEach((details) => {
       });
     }
   });
+});
+
+// event of contact
+document.querySelector('.btn-primary[href*="wa.me"]')?.addEventListener('click', () => {
+  if (typeof window.oaiq === 'function') {
+    window.oaiq('measure', 'lead_created', {
+      type: 'customer_action'
+    });
+  }
 });
