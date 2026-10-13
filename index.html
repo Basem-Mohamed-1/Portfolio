@@ -1,125 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basem Mohamed — Media Buyer &amp; Performance Marketer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a10">
+  <meta name="description" content="Basem Mohamed — performance marketer and media buyer.">
+  <title>Basem Mohamed — Performance Marketer</title>
   <link rel="stylesheet" href="styles.css">
-  <script>
-    !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};
-    q.q=[];
-    w.oaiq=q;
-    var j=d.createElement(s);
-    j.async=1;
-    j.src=u;
-    var f=d.getElementsByTagName(s)[0];
-    f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
-    oaiq("init",{pixelId:"M1FYQcpfM89A5UD4JM7Y8J",debug:true});
-    oaiq("measure", "page_viewed",{ type: "contents" });
-    </script>
-  
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18446826801"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'AW-18446826801');
-    </script>
 </head>
 <body>
-
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="index.html" class="brand" data-ar='<b>باسم محمد</b> · مسوّق إعلانات' style="text-decoration:none;"><b>Basem Mohamed</b> · Media Buyer</a>
-    <nav class="links" id="nav-links">
-      <a href="index.html" class="active" data-ar='الرئيسية'>Home</a>
-      <a href="experience.html" data-ar='الخبرة'>Experience</a>
-      <a href="case-studies.html" data-ar='دراسات الحالة'>Case Studies</a>
-      <a href="skills-education.html" data-ar='المهارات والتعليم'>Skills &amp; Education</a>
-      <a href="contact.html" data-ar='تواصل'>Contact</a>
+    <a class="brand" href="#home"><span class="brand-mark">B</span><span><b>Basem Mohamed</b><small>PERFORMANCE MARKETING</small></span></a>
+    <button class="hamburger icon-btn" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <nav class="links" id="nav-links" aria-label="Main navigation">
+      <a href="#case-studies">Case studies</a><a href="#results">Results</a><a href="#experience">Experience</a>
     </nav>
-    <div class="header-controls">
-      <div class="status-pill" data-ar='<span class="dot"></span>متاح للعمل'><span class="dot"></span>Available for work</div>
-      <button id="sound-toggle" class="icon-btn" type="button" aria-label="Toggle click sound" aria-pressed="false" title="Toggle click sound">
-        <svg id="icon-sound-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
-        <svg id="icon-sound-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-      </button>
-      <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Toggle Arabic / English" title="&#1593;&#1585;&#1576;&#1610; / English">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-        <span id="lang-label">AR</span>
-      </button>
-      <button id="hamburger" class="icon-btn hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-    </div>
+    <a class="button button-primary nav-cta" href="https://wa.me/201151930659" target="_blank" rel="noopener">Let’s talk <span aria-hidden="true">↗</span></a>
   </div>
 </header>
 
-<div class="wrap">
-
-  <!-- HERO -->
-  <section class="hero" style="border-bottom:none;">
-    <div class="table-head">
-      <div data-ar='الحملة'>Campaign</div><div data-ar='الحالة'>Delivery</div><div data-ar='الخبرة'>Experience</div><div data-ar='الإنفاق الإعلاني المُدار'>Ad Spend Managed</div><div data-ar='متوسط العائد على الإنفاق'>Total Avg. ROAS</div>
+<main>
+  <section class="hero section-shell" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow"><span></span> PERFORMANCE MEDIA · EGYPT</div>
+      <h1>Making every campaign work harder for <em>growth.</em></h1>
+      <p class="lede">Performance marketing shaped by clear testing, thoughtful execution, and a focus on business outcomes.</p>
+      <div class="hero-actions"><a class="button button-primary" href="https://wa.me/201151930659" target="_blank" rel="noopener">Let’s talk <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#work">Explore my work <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-note"><span class="live-dot"></span> Available for opportunities and freelance projects</div>
     </div>
-    <div class="table-row">
-      <div class="cell-name" data-ar='باسم محمد<span>مسوّق أداء / مشتري إعلانات</span>'>Basem Mohamed<span>Performance Marketer / Media Buyer</span></div>
-      <div class="cell up" data-ar='● نشط'>● Active</div>
-      <div class="cell" data-ar='سنة <small>خبرة عملية</small>'>1 year<small>Hands-on</small></div>
-      <div class="cell" data-ar='+62 ألف جنيه<small>تدريب + عمل حر</small>'>62K+ EGP<small>Internship + freelance</small></div>
-      <div class="cell up" data-ar='8.45x<small>عبر جميع الحملات</small>'>8.45x<small>Across all campaigns</small></div>
-    </div>
+    <figure class="hero-portrait"><img src="images/basem-photo.jpg" alt="Portrait of Basem Mohamed"><figcaption><span class="live-dot"></span> BASEM MOHAMED <small>PERFORMANCE MARKETER</small></figcaption></figure>
+    <div class="hero-glow" aria-hidden="true"></div>
+  </section>
 
-    <div class="hero-flex">
-      <div class="hero-main">
-        <h1 data-ar='أحوّل الإنفاق الإعلاني إلى <em>عملاء مؤهلين</em> ومبيعات فعلية.'>I turn ad spend into <em>qualified leads</em> and sales.</h1>
-        <p class="lede" data-ar='مسوّق أداء / مشتري إعلانات لديه خبرة عملية في إدارة حملات إعلانات ميتا عبر التجارة الإلكترونية والأزياء والتعليم وB2B والأعمال المحلية — إلى جانب فهم متنامٍ لاستراتيجية التسويق الأوسع، واقتصاديات الأعمال، والتحليلات، واكتساب العملاء. مدعوم بخلفية في علوم الحاسب تجعل كل قرار قائمًا على البيانات أولًا.'>A performance marketer / media buyer with hands-on experience managing Meta advertising campaigns across e-commerce, fashion, education, B2B, and local businesses — combined with a growing understanding of broader marketing strategy, business economics, analytics, and customer acquisition. Backed by a Computer Science background, which keeps every decision data-first.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="case-studies.html" data-ar='عرض دراسات الحالة ←'>View case studies →</a>
-          <a class="btn btn-ghost" href="https://wa.me/201151930659" target="_blank" rel="noopener" data-ar='تواصل معي'>Get in touch</a>
+  <section class="metric-strip" id="results" aria-label="Portfolio metrics">
+    <div class="metric"><span>HANDS-ON EXPERIENCE</span><strong>6 <small>months</small></strong></div>
+    <div class="metric"><span>AD SPEND MANAGED</span><strong>50K<small>+ EGP</small></strong></div>
+    <div class="metric"><span>GROSS SALES GENERATED</span><strong>400K<small> EGP</small></strong></div>
+    <div class="metric"><span>CLIENT INDUSTRIES</span><strong>06</strong></div>
+  </section>
+
+  <section class="trust-section section-shell" id="social-proof" aria-labelledby="trust-title">
+    <div class="trust-heading">
+      <h2 id="trust-title">10 retail and eCommerce brands in the portfolio.<br><em>250K+ in GMV.</em></h2>
+    </div>
+    <div class="logo-grid" aria-label="Client and partner logos">
+      <div><img src="images/logos/ZEDSEN WHITE.png" alt="Zedsen logo" loading="lazy"></div>
+      <div><img src="images/logos/noback_picture.png" alt="Client logo" loading="lazy"></div>
+      <div><img src="images/logos/21-removebg-preview.png" alt="Client logo" loading="lazy"></div>
+      <div><img src="images/logos/image copy.png" alt="Client logo" loading="lazy"></div>
+      <div><img src="images/logos/ro (5).png" alt="Client logo" loading="lazy"></div>
+    </div>
+    <div class="testimonial-grid" aria-label="Client testimonials">
+      <article class="testimonial-card"><p>“Basem has a strong technical understanding of performance marketing and knows how to build effective audience-targeting strategies.”</p><div class="testimonial-attribution"><img src="images/logos/21-removebg-preview.png" alt="Client logo" loading="lazy"><span><b>Yousef Gomma</b><small>Founder</small></span></div></article>
+      <article class="testimonial-card"><p>“Basem understands the business side of marketing, not just the ads. His insights and support helped us move forward and get the brand up and running.”</p><div class="testimonial-attribution"><img class="zedsen-review-logo" src="images/logos/ZEDSEN WHITE.png" alt="Zedsen logo" loading="lazy"><span><b>Ahmed</b><small>Co-Founder</small></span></div></article>
+      <article class="testimonial-card"><p>“Basem helped me promote my academies and demonstrated a strong understanding of media buying and campaign management.”</p><div class="testimonial-attribution"><img src="images/logos/ceramica_cleopatra_logo.png" alt="Ceramica Cleopatra logo" loading="lazy"><span><b>Mohamed Emam</b><small>CEO</small></span></div></article>
+    </div>
+  </section>
+
+  <section class="tool-marquee" aria-label="Advertising platforms and analytics tools">
+    <div class="tool-marquee-inner">
+      <div class="tool-row">
+        <h2>PAID MEDIA</h2>
+        <div class="ticker ticker-right-to-left" aria-label="Paid media platforms">
+          <div class="ticker-track">
+            <div class="ticker-set"><span><i class="platform-icon platform-meta" aria-hidden="true">∞</i>Meta Ads</span><span><i class="platform-icon platform-google" aria-hidden="true">G</i>Google Ads</span><span><i class="platform-icon platform-tiktok" aria-hidden="true">♪</i>TikTok Ads</span><span><i class="platform-icon platform-snapchat" aria-hidden="true">👻</i>Snapchat Ads</span><span><i class="platform-icon platform-linkedin" aria-hidden="true">in</i>LinkedIn Ads</span></div>
+            <div class="ticker-set" aria-hidden="true"><span><i class="platform-icon platform-meta">∞</i>Meta Ads</span><span><i class="platform-icon platform-google">G</i>Google Ads</span><span><i class="platform-icon platform-tiktok">♪</i>TikTok Ads</span><span><i class="platform-icon platform-snapchat">👻</i>Snapchat Ads</span><span><i class="platform-icon platform-linkedin">in</i>LinkedIn Ads</span></div>
+          </div>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="images/IMG_0838.png" alt="Basem Mohamed">
-      </figure>
-    </div>
-  </section>
-
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="eyebrow" data-ar='01 — نبذة'>01 — Summary</div>
-    <div class="about-grid">
-      <div>
-        <p data-ar='أدير حملات <strong>ميتا وتيك توك وجوجل أدز</strong> من الألف إلى الياء — من الاستراتيجية وتوزيع الميزانية إلى اختبار الإبداعات واستهداف الجمهور وتقارير الأداء — بهدف تحسين العائد على الاستثمار، وليس مجرد الانطباعات.'>I manage <strong>Meta, TikTok, and Google Ads</strong> campaigns end-to-end — strategy, budget allocation, creative testing, audience targeting, and performance reporting — with the goal of improving ROI, not just impressions.</p>
-        <p data-ar='خلفيتي الدراسية في <strong>علوم الحاسب</strong> بجامعة القاهرة، وهذا يشكّل طريقتي في التعامل مع شراء الإعلانات: كمسألة بيانات في المقام الأول. أبحث عن الأنماط في تكلفة النتيجة، وأبني هيكل الحملات بحيث أعزل المتغيرات، وأوثّق الأداء بنفس الطريقة التي أوثّق بها أي تحليل — بوضوح ومدعوم بالأرقام.'>My background is <strong>Computer Science</strong> at Cairo University, which shapes how I approach media buying: as a data problem first. I look for patterns in cost-per-result, structure campaigns to isolate variables, and report performance the way I'd document any analysis — clearly, and backed by numbers.</p>
-        <p data-ar='أدرت حملات لأنواع حسابات مختلفة تمامًا — من علامة تجارية للتجارة الإلكترونية بإنفاق مرتفع، إلى إطلاق فروع أكاديميات متعددة، وأزياء، وقطاع B2B — وهذا يعني أنني اضطررت لتكييف الاستهداف والاستراتيجية الإبداعية مع رحلات شراء مختلفة تمامًا، بدلًا من تطبيق خطة واحدة على الجميع.'>I've run campaigns across very different account types — a high-spend e-commerce brand, multi-branch academy launches, fashion, and B2B — which means I've had to adapt targeting and creative strategy to very different buyer journeys, not apply one playbook everywhere.</p>
+      <div class="tool-row">
+        <h2>TRACKING &amp; ANALYTICS</h2>
+        <div class="ticker ticker-right-to-left ticker-slower" aria-label="Tracking and analytics tools">
+          <div class="ticker-track">
+            <div class="ticker-set"><span>Google Tag Manager</span><span>GA4</span><span>Meta Pixel</span><span>Meta CAPI</span><span>Conversion Tracking</span></div>
+            <div class="ticker-set" aria-hidden="true"><span>Google Tag Manager</span><span>GA4</span><span>Meta Pixel</span><span>Meta CAPI</span><span>Conversion Tracking</span></div>
+          </div>
+        </div>
       </div>
-      <dl class="fact-list">
-        <div class="fact"><dt data-ar='الموقع'>Location</dt><dd data-ar='القاهرة الجديدة، مصر'>New Cairo, Egypt</dd></div>
-        <div class="fact"><dt data-ar='المنصات'>Platforms</dt><dd>Meta · TikTok · Google</dd></div>
-        <div class="fact"><dt data-ar='التعليم'>Education</dt><dd data-ar='بكالوريوس علوم الحاسب'>B.Sc. Computer Science</dd></div>
-        <div class="fact"><dt data-ar='اللغات'>Languages</dt><dd data-ar='العربية · الإنجليزية'>Arabic · English</dd></div>
-        <div class="fact"><dt data-ar='المجالات'>Industries</dt><dd data-ar='تجارة إلكترونية · أزياء · تعليم · B2B'>E-com · Fashion · Education · B2B</dd></div>
-      </dl>
     </div>
   </section>
 
-
-</div>
-
-<div class="slim-footer">
-  <div class="wrap">
-    <div class="slim-footer-inner">
-      <div class="foot-note" data-ar='© 2026 باسم محمد — موقع بورتفوليو حيّ، يتم تحديثه مع إغلاق كل حملة.'>© 2026 Basem Mohamed — Built as a live portfolio, updated as campaigns close.</div>
-      <a class="btn btn-primary" href="https://wa.me/201151930659"  data-ar='تواصل معي'>Get in touch</a>
+  <section class="approach-section section-shell" id="approach" aria-labelledby="approach-title">
+    <div class="approach-heading">
+      <span class="approach-kicker">MY APPROACH</span>
+      <h2 id="approach-title">I don’t just run ads.<br>I build <em>growth systems.</em></h2>
+      <p>I approach performance marketing as a structured process—connecting strategy, creative testing, data, and optimization to support business growth.</p>
     </div>
-  </div>
-</div>
-  
-<script src="tracking.js"></script>
+    <div class="approach-steps">
+      <article class="approach-card approach-lilac"><div class="approach-icon" aria-hidden="true">◎</div><span class="approach-number">01</span><h3>Understand<br>the business</h3><p>Start with the business model, audience, offer, margins, and goals before planning the campaign.</p></article>
+      <article class="approach-card approach-mint"><div class="approach-icon" aria-hidden="true">⌖</div><span class="approach-number">02</span><h3>Build<br>the strategy</h3><p>Choose the right platforms, define campaign structure, and allocate budget around priorities.</p></article>
+      <article class="approach-card approach-amber"><div class="approach-icon" aria-hidden="true">⌬</div><span class="approach-number">03</span><h3>Test &amp; learn</h3><p>Test creative, messaging, and audiences systematically to learn what drives meaningful results.</p></article>
+      <article class="approach-card approach-blue"><div class="approach-icon" aria-hidden="true">▥</div><span class="approach-number">04</span><h3>Analyze &amp;<br>optimize</h3><p>Use campaign performance and tracking data to spot opportunities and improve efficiency.</p></article>
+      <article class="approach-card approach-pink"><div class="approach-icon" aria-hidden="true">↗</div><span class="approach-number">05</span><h3>Scale with<br>confidence</h3><p>Build on what works while keeping costs, customer quality, and business goals in view.</p></article>
+    </div>
+    <div class="approach-outcome"><span></span><b>BETTER STRATEGY</b><i>→</i><b>SMARTER SPEND</b><i>→</i><b>MEASURABLE GROWTH</b><span></span></div>
+  </section>
+
+  <section class="case-studies-section section-shell" id="case-studies" aria-labelledby="case-studies-title">
+    <div class="case-studies-heading"><div class="eyebrow"><span></span> SELECTED CAMPAIGN WORK</div><h2 id="case-studies-title">Case Studies</h2><p>Campaign context, results, and the work behind them.</p></div>
+    <div class="case-study-list">
+      <article class="case-study-card"><div class="case-study-title"><span>CASE STUDY 01</span><h3>Case study title</h3></div><figure class="case-study-visual"><button class="case-study-zoom" type="button" aria-label="View case study one campaign results full size"><img src="images/case_result_1.png" alt="Campaign results for case study one" loading="lazy"></button><figcaption>CAMPAIGN RESULTS</figcaption></figure><figure class="spend-visual"><img src="images/spent_1.jpeg" alt="Ad spend for case study one" loading="lazy"><figcaption>AD SPEND</figcaption></figure><div class="case-study-description"><p>Generated EGP 50K+ in under 7 days through website optimization, strategic launch timing, competitive creatives, and FOMO-driven urgency.</p></div></article>
+      <article class="case-study-card"><div class="case-study-title"><span>CASE STUDY 02</span><h3>Case study title</h3></div><figure class="case-study-visual"><button class="case-study-zoom" type="button" aria-label="View case study two campaign results full size"><img src="images/case_result_2.png" alt="Campaign results for case study two" loading="lazy"></button><figcaption>CAMPAIGN RESULTS</figcaption></figure><figure class="spend-visual"><img src="images/spent_2.jpeg" alt="Ad spend for case study two" loading="lazy"><figcaption>AD SPEND</figcaption></figure><div class="case-study-description"><p>Generated EGP 25K+ in sales for a new brand & new product by selecting a product based on customer behavior, creating relevant content, and testing pricing strategies.</p></div></article>
+    </div>
+  </section>
+
+  <section class="experience-section section-shell" id="experience">
+    <div class="section-heading"><div><div class="eyebrow"><span></span> EXPERIENCE &amp; EDUCATION</div><h2>Learning through doing.</h2></div><p>Media buying experience backed by a technical foundation and a habit of asking better questions.</p></div>
+    <div class="timeline"><article><span class="timeline-date">CURRENT</span><div><h3>Pulvent</h3><p>Working at Pulvent, a software house company.</p></div><b>SOFTWARE HOUSE</b></article><article><span class="timeline-date">EXPERIENCE</span><div><h3>Media Buyer Intern <small>· De Backers</small></h3><p>Managed and optimized Meta campaigns for a high-spend ecommerce account.</p></div></article><article><span class="timeline-date">INDEPENDENT</span><div><h3>Freelance Media Buyer</h3><p>Campaigns across fashion, education, and B2B industrial services.</p></div></article><article><span class="timeline-date">EDUCATION</span><div><h3>B.Sc. Computer Science <small>· Cairo University</small></h3><p>Faculty of Computers &amp; Artificial Intelligence · Expected 2028</p></div><b>2024—28</b></article></div>
+  </section>
+
+  <section class="contact-section section-shell" id="contact"><div><h2>Your Growth Journey Starts Here</h2><p>Open to media buying roles, freelance projects, and campaign audits.</p></div><a class="button button-primary" href="https://wa.me/201151930659" target="_blank" rel="noopener">Start a conversation <span aria-hidden="true">↗</span></a></section>
+</main>
+<dialog class="photo-lightbox" aria-label="Full size campaign image"><button class="lightbox-close" type="button" aria-label="Close image">×</button><img alt=""></dialog>
+<footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">B</span><span><b>Basem Mohamed</b><small>PERFORMANCE MARKETING</small></span></a><span>© 2026 Basem Mohamed</span><div><a href="https://www.linkedin.com/in/basemmmohamedd/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://wa.me/201151930659" target="_blank" rel="noopener">WhatsApp ↗</a></div></footer>
 <script src="script.js"></script>
 </body>
 </html>
